@@ -240,7 +240,7 @@
 							</center>
 							<center><p class="words2">Accuracy: 0.6418</p></center>
 							<h2 class="subtitles2">Evaluation on Initial Tree</h2>
-							<p class="words2">Considering the real world situation, False Negative does not cause detrimental effects because people do not drink water if it is identified as non-potable even though it is actually potable. However, the opposite case (False Positive) will cause significant problems (illness), so we need to make sure to reduce the number of False Positives to be able to get a higher specificity.</p>
+							<p class="words2">Our initial decision tree has 0.4198 sensitivity and 0.7917 specificity with 0.6418 accuracy. Considering the real world situation, False Negative (which is related to sensitivity) does not cause detrimental effects because people do not drink water if it is identified as non-potable even though it is actually potable. However, the opposite case (False Positive) will cause significant problems (illness), so we need to make sure to reduce the number of False Positives to be able to get a higher specificity.</p>
 							<h2 class="subtitles2">Improving on the model by adjusting threshold</h2>
 							<p class="words2">By adjusting the model’s threshold 0.1 in either direction, we did not see a dramatic change in the model’s overall accuracy as between 0.4 and 0.7 threshold models still have an accuracy around 0.64. We adjusted threshold to 0.6 to get a higher specificity which is 0.96667.</p>
 							<center>
