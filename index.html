@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+-->
+<html>
+	<head>
+		<title>Water Quality</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="fa fa-tint" aria-hidden="true" style="font-size: 2.5em"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1 class="title">D R I N K I N G&emsp;W A T E R&emsp; <br>
+									Q U A L I T Y</h1>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro"><b>INTRO</b></a></li>
+								<li><a href="#analysis"><b>EXPLORATORY DATA</b></a></li>
+								<li><a href="#methods"><b>METHODS</b></a></li>
+								<li><a href="#results"><b>RESULTS</b></a></li>
+								<li><a href="#conclusion"><b>CONCLUSIONS</b></a></li>
+								<li><a href="#future"><b>FUTURE WORK</b></a></li>
+								<li><a href="#sources"><b>SOURCES</b></a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">Intro</h2>
+								<center>
+								<span class="image main"><img src="images/well.jpg" alt="" /></span>
+								</center>
+								<h2 class="subtitles">Problem:</h2>
+								<p class="words">Access to safe drinking water is essential to health and a basic human right, though many developing countries and even parts of the U.S. like Flint, Michigan are living with contaminated drinking water. With the increased prevalence of climate change, drinking water is becoming even more negatively impacted by contaminants. In these instances, non-potable drinking water containing unsafe levels of contaminants can have serious adverse health effects, such as gastrointestinal illnesses, cancer, and transmissible diseases. <br>
+									<br>
+									There are various water quality metrics that may contribute to the potability of drinking water. We want to analyze different metrics that may more heavily contribute to water being non-potable which could, in the real world, help formulate effective policy for health protection through implementation of systems that specifically de-contaminate the water of these substances. In some regions, it has been shown that investments in water supply and sanitation can yield a net economic benefit, since the reductions in adverse health effects and health care costs outweigh the costs of undertaking the interventions.
+								</p>
+								<br>
+								<h2 class="subtitles">Questions:</h2>
+								<p class="words"> 1.&ensp;What is the distribution of each metric in regards to potable and non-potable water quality and can observations about water potability and selected metrics be made when other metrics are at varied levels?<br>
+									2.&ensp;How well can machine learning models accurately predict the non-potability of water?
+								</p>
+								<br>
+								<h2 class="subtitles">Background Information:</h2>
+								<p class="words">Water quality describes the condition of water and thus, to what extent it is safe for humans to utilize at different capacities (drinking, swimming, etc.). Understanding the quality of the water we drink is an integral component to protecting our health as well as the health of the environment. Contaminated water has been the root of numerous global health-related crises and lack of access to clean water in America, for example, can be further explained by the current structural and systematic racism embedded within society. <br>
+									<br>
+									771 million people (1 in 10) lack access to safe water. Approximately 829,000 individuals are predicted to die every year from diarrhea as a result of unsafe drinking water, poor hand hygiene, and poor sanitation. <br>
+									<br>
+									Current challenges to water supply systems include population growth, climate change, increasing water scarcity, demographic changes, and urbanization. The increasing rate of population growth contributes to the increased scarcity of clean water as the global human population reached 8 million in mid-November 2022. Additionally, the growing prevalence of climate change around the world is also affecting water access by disrupting water patterns and through the emergence of extreme weather events. For example, hotter, drier mountains leach more metal into water sources from abandoned mines and natural deposits, causing more acidified and contaminated drinking water. <br>
+									<br>
+									Reapplying this to the real world: <br>
+									-&emsp;The Flint Water Crisis was a prime example of how our past responses and interventions during crises have shaped our current local, global, and national relationships between societies and people in the U.S. <br>
+									-&emsp;Individuals and children in developing countries and low-income areas have to bear the burden of this crisis due to the avarices of those in positions of power.<br>
+									-&emsp;Improving and optimizing water quality is a collective responsibility to work towards improving water sources for disproportionate areas while also addressing and eradicating health and racial disparities for both small communities such as Flint Michigan, American society, and the world at large. <br>
+									<br>
+									How water is cleaned: <br>
+									-&emsp;In the U.S., water from surface and ground sources are treated to levels that meet state and federal standards for consumption by disinfecting and filtering the water or by meeting specific criteria for avoiding filtration so specific contaminants are controlled at certain levels. <br>
+									-&emsp;The EPA established maximum contaminant levels for various contaminants <a target="_blank" rel="noopener nnoregerrer" href="https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations">here</a>. <br>
+									-&emsp;Water from natural sources is treated for microorganisms, bacteria, toxic chemicals, viruses, and fecal matter.
+								</p>
+							</article>
+
+						<!-- Analysis -->
+						<article id="analysis">
+							<h2 class="major">EXPLORATORY DATA ANALYSIS</h2>
+							<h2 class="subtitles">Dataset:&ensp;<a target="_blank" rel="noopener nnoregerrer" href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">Water Quality</a></h2>
+								<p class="words">A datasest containing water quality metrics for 3276 different water bodies.</p>
+									<p class="words"><b>Predictor Variables: </b><br>
+									<ul class="words">
+										<li><b>pH VALUE:</b>&ensp;acidic or basic/alkaline condition </li>
+                                        <li><b>HARDNESS:</b>&ensp;caused by calcium and magnesium salts </li>
+                                        <li><b>SOLIDS:</b>&ensp;mineralization of organic minerals or salts </li>
+										<li><b>CHLORAMINES:</b>&ensp;disinfectants (chlorine + ammonia) </li>
+                                        <li><b>SULFATES:</b>&ensp;naturally occurring substance present in minerals, soil, rocks </li>
+                                        <li><b>CONDUCTIVITY:</b>&ensp;determined by amount of dissolved solids </li>
+										<li><b>ORGANIC CARBON:</b>&ensp;carbon in decaying natural organic matter and synthetic sources </li>
+                                        <li><b>TRIHALOMETHANES:</b>&ensp;chemicals found in water treated with chlorine </li>
+                                        <li><b>TURBIDITY:</b>&ensp;depends on quantity of solid matter present; measure of light emitting properties of water </li>
+									</ul>
+									<p class="words"><b>Target Variable: </b><br>
+									<ul class="words">
+										<li><b>POTABILITY:</b>&ensp;indicator of whether water is safe for human consumption where 1 = Potable (good water) and 0 = Not Potable (bad water)</li>
+                                    </ul>
+									</p>
+							<h2 class="subtitles">DATA CLEANING:</h2>
+							<ul class="words">
+								<li>Removed rows containing at least one NA</li>
+								<li>Converted "Potability to a factor (categorical variable)</li>
+								<li>Recoded the target variable to signify 1 as “Potable” and 0 as “Not Potable”</li>
+							</ul>
+
+							<br>
+							<center>
+							<h2 class="viztext">DISTRIBUTION OF DATA BETWEEN POTABLE & NON-POTABLE</h2>
+							</center>
+							<center>
+								<span><img class="viz" src="images/viz1.png" alt="" /></span>
+							</center>
+							<br>
+							<center>
+							<h2 class="viztext">CORRELATION HEATMAP</h2>
+							</center>
+							<center>
+								<span><img class="viz" src="images/corr.png" alt="" /></span>
+								<p>Visualizes low correlation between predictor variables</p>
+							</center>
+							<br>
+
+						</article>
+
+						<!-- Methods -->
+							<article id="methods">
+								<h2 class="major">METHODS</h2>
+								<h2 class="subtitles2">Shiny App:</h2>
+								<p class="words2">This app is an interactive way to further analyze the potability and non-potability of water according to different metrics in this dataset. Each water quality metric has its own tab in the app of its distribution that is connected to each of the metric slider inputs. The distributions are visualized through both a histogram and box plots that are divided by potability level with red as non-potable and green as potable. The recommended levels and thresholds for each metric are also included in order to clearly visualize how the distributions relate to normal health standards. Overall, these visualizations are meant to demonstrate the varying distribution levels of each metric and their potability considerations. The interactivity of the slider inputs was implemented into these distributions in order for one to test and see how a varied level of one or more metrics can impact other metric distributions.</p>
+								<br>
+								<h2 class="subtitles2">Machine Learning Models:</h2>
+								<p class="words2">Initially, we wanted to use more various methods including unsupervised methods such as clustering, but our target variable (Potability) on the dataset was preset with categorical variable (1 = potable, 0 = non_potable), so we were not able to identify correlations between predictor variables and the target variable. Therefore, given that condition, the best options for creating machine learning models were Random Forest method and Decision Tree method. For the Decision Tree, we tried different techniques to improve the model by altering the maxdepth, threshold, etc. We worked towards optimizing the random forest model by increasing and decreasing the number of trees and nodesize. Aligning to the original dataset which categorized “Potable” as “1” and “Not_Potable” as 0, we designated the positive class in these models as water being identified as “Potable.” <br>
+									<br>
+									When cleaning the data, we noticed a number of NA values both in the pH and Sulfates columns. Initially, we planned to remove these columns, however we wanted to determine whether these properties played a significant role in determining water potability and did not want to risk skewing the predictions and model accuracy. Moreover, the pH column was a critical component that we wanted to keep as assessing the effect of pH potability connects back to the issue of climate change and how the change in weather has made the ocean and other bodies of water more acidic. As a result, we decided to remove the NA values and keep both columns. Applying to both models, we partitioned the data, creating train, tune, and test sets that were split into 80,10, and 10 percent of the data, respectively. In an attempt to improve our models, we removed several of the variables that did not contribute any importance to the target variable, however the accuracy percentage did not change. Thus, we re-added them, ultimately keeping all of the columns.</p>
+							</article>
+						
+						<!-- Results & Evaluation -->
+						<article id="results">
+							<h2 class="major">RESULTS & EVALUATION</h2>
+							<center><h3 class="shinytext"><a target="_blank" rel="noopener nnoregerrer" href="https://sfissel.shinyapps.io/waterApp/?_ga=2.39058915.1539691909.1672863674-883015285.1667327339"><u>I N T E R A C T I V E&emsp;S H I N Y&emsp;A P P</u></a></h2></center>
+							<div id="wrap">									
+								<iframe id="scaled-frame" frameborder="no" src="https://sfissel.shinyapps.io/waterApp/"> </iframe>
+							</div>
+							<br>
+							<h2 class="subtitles2">Evaluation of Shiny App:</h2>
+							<p class="words2">A majority of the metrics displayed in this app have a dense amount of the metric distribution outside of the recommended levels and thresholds:
+								<ul>
+									<li> pH: distribution includes similar amounts of acidic and basic water samples
+										<ul class="bullet">
+											<li>Acidic water: metallic taste and contaminants (e.g. lead) due to metal plumbing corrosion</li>
+											<li>Basic/alkaline water: slight increase in pH can be beneficial</li>
+											<li>Not actively regulated by the EPA</li>
+										</ul>
+									</li>
+									<li> Hardness: almost all of the data was considered to be hard water
+										<ul class="bullet">
+											<li>Not a health risk but has effect on home</li>
+										</ul>
+									</li>
+									<li> Solids: very strange that the values in the distribution extend to almost 40 times the recommended upper threshold
+										<ul class="bullet">
+											<li>Known to be an aesthetic factor of water (mineral water)</li>
+											<li>Can include presence of toxic minerals</li>
+											<li>Not actively regulated by the EPA</li>
+										</ul>
+									</li>
+									<li> Chloramines, Sulfates, Organic Carbon: majority of water samples were unsafe in regards to recommended levels
+										<ul class="bullet">
+											<li>Chloramines: can cause skin and eye irritation, harsh taste and odor</li>
+											<li>Sulfates: can cause strong laxative effects leading to dehydration, bitter taste</li>
+											<li>Organic carbon: can cause bladder cancer, reproductive problems, and pregnancy complications</li>
+										</ul>
+									</li>
+									<li>Trihalomethanes, Turbidity: majority of samples were considered safe</li>
+								</ul>
+							</p>
+							<center><h3 class="shinytext"><u>R A N D O M&emsp;F O R E S T</u></h2></center>
+							<h2 class="subtitles2">Variable Importance</h2>
+							<center>
+								<span><img class="viz" src="images/varimprf.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Model Visualization</h2>
+							<center>
+								<span><img class="viz" src="images/rf.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Confusion Matrices</h2>
+							<center>
+								<span><img class="viz" src="images/iconfusionrf1.png" alt="" /></span>
+							</center>
+							<center>
+								<span><img class="viz" src="images/oconfusionrf.png" alt="" /></span>
+							</center>
+							<center>
+								<span><img class="viz" src="images/confusionrf.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Summary Statistics</h2>
+							<center>
+								<span><img class="viz" src="images/sumstatrf.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Evaluation of Random Forest:</h2>
+							<ul>
+								<li>Overall, the model does a good job in predicting whether someone is drinking non-potable water but does not do a great job at predicting whether the water is potable. Although the focus of this project is on non-potable water, the positive class for this case was “potable”. The predicted accuracy was 66% which is not inadequate but should still be revised for improvement. The sensitivity and specificity values reflect this observation as the sensitivity rate is very low while the specificity rate is very high.</li>
+								<li>For the initial random forest, the error was 0.07 which decreased in the second one down to 0.05 which seems promising but still needs some work. The sensitivity value, also known as the true positive rate, is 0.25 which is low and indicates that this model does not perform well at predicting if the water is safe to drink. On the other hand, the specificity value is .93 which is high and indicates that this model does a great job at predicting if the water is unsafe to drink, or the true negative rate.</li>
+								<li>Through optimizing the random forest from the initial model, the final accuracy was 66% through changing the number of trees, node size, and sample size. Evaluating the confusion matrix, it appears that the false positive rate is relatively low, which is great as this suggests that the model predicts the water as potable when it is in fact non-potable at a low rate. </li>
+								<li>Unfortunately, the false negative rate, which would predict water as non-potable when it is actually potable, is fairly high, which can be a neutral result but can still have detrimental impacts in the real world. This would indicate that the water is predicted as non-potable when it actually is. While it does not harm anyone directly since it would then be advised not to drink it, it indirectly harms those who would need that water the most since this water is deemed non-potable when its actually safe and would go to waste.</li>
+							</ul>
+							<center><h3 class="shinytext"><u>D E C I S I O N&emsp;T R E E</u></h2></center>
+							<h2 class="subtitles2">Confusion Matrix</h2>
+							<center>
+								<span><img class="viz" src="images/confusion.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Split data into Train, Tune, and Test sets (80/10/10)</h2>
+							<p class="words2">We partitioned our data into train, tune, and test with subsetting 80% of the data into train, and split the rest equally into tune and test.</p>
+							<center>
+								<span><img class="viz" src="images/train.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Ideal Max Tree Depth</h2>
+							<p class="words2">We were looking at max tree depths between 1 and 15 at the beginning. The model was substantially improving between depths of 1 to 8. After the depth of 8, the model is overfitting, so we decided to set our optimized max tree depth as 6.</p>
+							<center>
+								<span><img class="viz" src="images/maxtree.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Variable Importance Table</h2>
+							<p class="words2">This variable importance is the result when we choose the max tree depth as 6. Looking at the variable importance, the most contributing variables for predicting potability of water are ph and Sulfate.</p>
+							<center>
+								<span><img class="viz" src="images/varimpdt.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Decision Tree Model - Max Tree Depth: 6</h2>
+							<p class="words2">Our decision tree shows that the data is first split based on Sulfate and then further split based on Sulfate and Solids. The group with the greatest split was Sulfate with the dividing point with level of 261. Compared with the result of variable importance, pH has three dividing points > Sulfate has two dividing points, so it looks to be following the variable importance well.</p>
+							<center>
+								<span><img class="viz" src="images/decisiontree.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">Initial Model Statistics</h2>
+							<center>
+								<span><img class="viz" src="images/initialmodelstat.png" alt="" /></span>
+							</center>
+							<center><p class="words2">Accuracy: 0.6418</p></center>
+							<h2 class="subtitles2">Evaluation on Initial Tree</h2>
+							<p class="words2">Our initial decision tree has 0.4198 sensitivity and 0.7917 specificity with 0.6418 accuracy. Considering the real world situation, False Negative (which is related to sensitivity) does not cause detrimental effects because people do not drink water if it is identified as non-potable even though it is actually potable. However, the opposite case (False Positive) will cause significant problems (illness), so we need to make sure to reduce the number of False Positives to be able to get a higher specificity.</p>
+							<h2 class="subtitles2">Improving on the model by adjusting threshold</h2>
+							<p class="words2">By adjusting the model’s threshold 0.1 in either direction, we did not see a dramatic change in the model’s overall accuracy as between 0.4 and 0.7 threshold models still have an accuracy around 0.64. We adjusted threshold to 0.6 to get a higher specificity which is 0.96667.</p>
+							<center>
+								<span><img class="viz" src="images/adjustthresh.png" alt="" /></span>
+							</center>
+							<center><p class="words2">Accuracy: 0.6418</p></center>
+							<p class="words2">The accuracy has not improved but our specificity has been much improved. Even though the sensitivity and the specificity are not balanced, our specificity has reached to almost 100%.</p>
+							<h2 class="subtitles2">Summary Statistics</h2>
+							<center>
+								<span><img class="viz" src="images/sumstat.png" alt="" /></span>
+							</center>
+							<h2 class="subtitles2">ROC and AUC</h2>
+							<center>
+								<span><img class="viz" src="images/roc.png" alt="" /></span>
+							</center>
+							<center><p class="words2">AUC value: 0.6326132</p></center>
+							<p class="words2">An ROC (Receiver Operating Characteristic) curve shows the performance of a classification model at all classification thresholds. This plots True Positive Rate vs. False Positive Rate at different threshold levels. Lowering the classification threshold classified more items as positive, thus increasing both False Positive and True Positives. Our ROC curve is not ideal looking because the shape of ROC is better when a curved line gets close to the top-left corner. However, our goal is to focus on getting a higher specificity on the model to prevent people from drinking incorrectly identified water as potable (actual: non-potable water) instead of balancing sensitivity and specificity, the result of ROC and the value of AUC (Area under the ROC Curve: 0.6326132) does make sense.</p>
+							<br>
+
+						</article>
+
+						<!-- Conclusions -->
+							<article id="conclusion">
+								<h2 class="major">CONCLUSIONS</h2>
+								<center>
+								<span class="image main"><img src="images/hand.png" alt="" /></span>
+								</center>
+								<p class="words2">We were trying to increase the accuracy of models on Decision Tree and Random Forest. Given that the accuracy of the model only reached 66%, the accuracy we were able to reach was around 64% through the Decision Tree model. As our question focused on Non-Potability and creating a model to predict when water is non-potable or in other words, unsafe, we aimed to optimize our models to reduce the False Positive Rate as reflected in the matrix. Specifically, the FP rate suggests that the model predicts the water to be potable when it is actually non-potable. For the decision tree, we tried different methods such as C5.0 and LGOCV (Leave Group Out Cross Validation) besides rpart2, but the best fit was the rpart2 method considering the overall quality of the model.</p>
+								<p class="words2">We were also able to see the varying levels of each water quality metric in determining whether water is potable or not. It was surprising to notice how very few metrics of the water samples aligned with recommended levels and yet many of those samples were still deemed potable. Looking further into how possibly dangerous the metrics with distributions higher than recommendations were, we realized that some of the metrics are not regulated in the U.S., so they might not pose as great of a risk to the public, but others could have real potential health issues at high levels.</p>
+								
+							</article>
+
+							<!-- Future Work -->
+							<article id="future">
+								<h2 class="major">FUTURE WORK</h2>
+								<center>
+								<span class="image main"><img src="images/hands.jpg" alt="" /></span>
+								</center>
+								<br>
+								<ul class="futurework">
+									<li>Do more analysis involving geographical data to implement as another factor of water quality (climate change, agriculture, etc.)</li>
+									<li>Improve the model to better predict water as potable and increase the overall accuracy</li>
+									<li>Figure out how to connect the Shiny app to the existing machine learning models</li>
+									<li>Look at a bigger size of data or any related data that we can combine/merge so that allows us to train the models and predict with better accuracy</li>
+								</ul>
+								
+							</article>
+
+							<!-- Sources -->
+							<article id="sources">
+								<h2 class="major">SOURCES</h2>
+								<center>
+								<span class="image main"><img src="images/spout.jpg" alt="" /></span>
+								</center>
+								<ul class="sources">
+									<li><a target="_blank" rel="noopener nnoregerrer" href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">https://www.kaggle.com/datasets/adityakadiwal/water-potability</a></li>
+									<li><a target="_blank" rel="noopener nnoregerrer" href="https://www.who.int/news-room/fact-sheets/detail/drinking-water">https://www.who.int/news-room/fact-sheets/detail/drinking-water</a></li>
+									<li><a target="_blank" rel="noopener nnoregerrer" href="https://www.scientificamerican.com/article/climate-change-is-acidifying-and-contaminating-drinking-water-and-alpine-ecosystems/">https://www.scientificamerican.com/article/climate-change-is-acidifying-and-contaminating-drinking-water-and-alpine-ecosystems/</a></li>
+									<li><a target="_blank" rel="noopener nnoregerrer" href="https://www.watereducation.org/aquapedia-background/potable-water">https://www.watereducation.org/aquapedia-background/potable-water</a></li>
+									<li><a target="_blank" rel="noopener nnoregerrer" href="https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations">https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations</a></li>
+									<li><a target="_blank" rel="noopener nnoregerrer" href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc">https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc</a></li>
+									<li><a target="_blank" rel="noopener nnoregerrer" href="https://www.products.pcc.eu/en/blog/what-should-the-ph-of-drinking-water-be/">https://www.products.pcc.eu/en/blog/what-should-the-ph-of-drinking-water-be/</a></li>
+								</ul>
+								
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+						<p class="copyright">&copy; Project by Stephanie Fissel, Beza Gashe, & Claire Yoon&emsp;|&ensp;<a target="_blank" rel="noopener nnoregerrer" href="https://github.com/sfissel/water-quality-project">GitHub&ensp;<i class="fa fa-github" style="font-size:20px"></i></a>&emsp;|&ensp;Design: <a target="_blank" rel="noopener nnoregerrer" href="https://html5up.net">HTML5 UP</a></p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
